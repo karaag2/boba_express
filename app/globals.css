@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F5F5F0;
+  --color-foreground: #0F172A;
+  --color-primary: #A3FF47;
+  --color-secondary: #FF6B35;
+  --color-muted: #E2E2D9;
+  
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Bebas Neue", cursive;
+}
+
+:root {
+  --background: #F5F5F0;
+  --foreground: #0F172A;
+  --primary: #A3FF47;
+  --secondary: #FF6B35;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold uppercase tracking-tight;
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-foreground/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-foreground/30;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.dark-glass {
+  @apply bg-black/70 backdrop-blur-md border border-white/10;
+}
+
+/* Brutalist Shadows */
+.brutalist-shadow {
+  box-shadow: 6px 6px 0px 0px rgba(15, 23, 42, 1);
+}
+
+.brutalist-shadow-sm {
+  box-shadow: 4px 4px 0px 0px rgba(15, 23, 42, 1);
+}
+
+.hover-brutalist:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px rgba(15, 23, 42, 1);
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
