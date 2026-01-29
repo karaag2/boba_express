@@ -51,11 +51,11 @@ export default function Features() {
             <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="text-6xl md:text-8xl font-black font-display uppercase italic text-foreground"
+                className="text-6xl md:text-8xl font-black font-display uppercase italic text-foreground text-wrap-balance"
             >
-                POURQUOI <span className="text-primary not-italic">NOUS ?</span>
+                POURQUOI <span className="text-primary-content not-italic">NOUS ?</span>
             </motion.h2>
-            <p className="text-xl text-foreground/60 font-medium max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/80 font-medium max-w-2xl mx-auto">
                 On ne fait pas juste des boissons. On crée des moments.
             </p>
         </div>
@@ -68,13 +68,13 @@ export default function Features() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ translateZ: 20, rotate: idx % 2 === 0 ? 2 : -2 }}
-              className="p-10 border-4 border-foreground bg-white brutalist-shadow hover:bg-muted transition-colors group relative"
+              className="p-10 border-4 border-foreground bg-white brutalist-shadow hover:bg-muted transition-colors group relative focus-within:ring-4 focus-within:ring-primary outline-none"
             >
               <div className={`w-20 h-20 ${feature.color} border-4 border-foreground rounded-2xl flex items-center justify-center mb-8 rotate-3 group-hover:rotate-12 transition-transform`}>
-                <feature.icon size={40} className="text-foreground" />
+                <feature.icon size={40} className="text-foreground" aria-hidden="true" />
               </div>
               <h3 className="text-3xl font-display mb-4 uppercase italic tracking-tighter">{feature.title}</h3>
-              <p className="text-lg font-medium text-foreground/70">{feature.description}</p>
+              <p className="text-lg font-medium text-foreground/80">{feature.description}</p>
               
               {/* Corner accent */}
               <div className={`absolute top-4 right-4 w-4 h-4 rounded-full ${feature.color} border-2 border-foreground`} />

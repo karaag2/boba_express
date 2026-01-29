@@ -36,6 +36,7 @@ export default function Hero() {
                         fill
                         className="object-cover transition-all duration-700"
                         priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     />
                     
                     {/* Floating Info Tag */}
@@ -46,7 +47,7 @@ export default function Hero() {
                     >
                         <Zap size={20} className="animate-pulse lg:w-6 lg:h-6" />
                         <div>
-                            <div className="text-[8px] lg:text-[10px] font-black uppercase opacity-60 leading-none text-foreground">Best Seller</div>
+                            <div className="text-[10px] font-black uppercase opacity-70 leading-none text-foreground">Best Seller</div>
                             <div className="text-lg lg:text-xl font-display leading-none mt-1 text-foreground uppercase">MATCHA SUPREME</div>
                         </div>
                     </motion.div>
@@ -57,7 +58,7 @@ export default function Hero() {
                     whileHover={{ scale: 1.1, rotate: -5 }}
                     className="absolute top-[-15px] right-[-15px] lg:top-[-20px] lg:right-[-20px] w-16 h-16 lg:w-24 lg:h-24 bg-secondary rounded-full flex items-center justify-center border-2 border-foreground brutalist-shadow-sm rotate-12 cursor-pointer z-20"
                 >
-                    <span className="text-white font-display text-sm lg:text-lg text-center leading-none">NEW<br/>COLLECTION</span>
+                    <span className="text-foreground font-display text-sm lg:text-lg text-center leading-none">NEW<br/>COLLECTION</span>
                 </motion.div>
             </motion.div>
         </div>
@@ -71,7 +72,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-foreground brutalist-shadow-sm rounded-full"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground">Ouvert à Yantala • 11:00 - 22:00</span>
+            <span className="text-xs font-black uppercase tracking-[0.2em] text-foreground">Ouvert à Yantala • 11:00 - 22:00</span>
           </motion.div>
 
           <motion.div
@@ -79,9 +80,9 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-[14vw] lg:text-[7rem] leading-[0.85] font-black tracking-tighter uppercase mb-4 lg:mb-0 text-foreground">
+            <h1 className="text-[14vw] lg:text-[7rem] leading-[0.85] font-black tracking-tighter uppercase mb-4 lg:mb-0 text-foreground text-wrap-balance">
               L&apos;ART DU <br/>
-              <span className="text-primary italic relative">
+              <span className="text-primary-content italic relative">
                 MATCHA 
                 <svg className="absolute -bottom-2 left-0 w-full h-4 text-secondary/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
@@ -95,7 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="max-w-lg text-lg lg:text-2xl font-medium leading-relaxed opacity-80 text-foreground"
+            className="max-w-lg text-lg lg:text-2xl font-medium leading-relaxed text-foreground/80"
           >
             Boba Express redéfinit l&apos;expérience du Bubble Tea à Niamey. 
             Des ingrédients premium, une culture authentique, une énergie pure.
@@ -107,14 +108,14 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="flex flex-wrap gap-4 lg:gap-6 justify-center lg:justify-start"
           >
-            <button className="group relative bg-foreground text-background px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase overflow-hidden brutalist-shadow hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+            <button className="group relative bg-foreground text-background px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase overflow-hidden brutalist-shadow hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none">
                 <span className="relative z-10 flex items-center gap-3">
                     COMMANDER <ShoppingCart size={24} />
                 </span>
                 <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
             
-            <button className="px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase border-2 border-foreground hover:bg-white transition-all flex items-center gap-3 text-foreground">
+            <button className="px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase border-2 border-foreground hover:bg-white transition-all flex items-center gap-3 text-foreground focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
                 LE MENU <ArrowRight size={24} />
             </button>
           </motion.div>
@@ -122,20 +123,20 @@ export default function Hero() {
           {/* Trust Badges */}
           <div className="flex items-center gap-4 lg:gap-8 pt-6 border-t border-foreground/10 w-full justify-center lg:justify-start">
             <div className="flex flex-col items-center lg:items-start text-foreground">
-                <span className="text-2xl lg:text-3xl font-black">4.9/5</span>
-                <div className="flex text-secondary">
+                <span className="text-2xl lg:text-3xl font-black tabular-nums">4.9/5</span>
+                <div className="flex text-secondary-content">
                     <Star size={14} fill="currentColor" />
                     <Star size={14} fill="currentColor" />
                     <Star size={14} fill="currentColor" />
                     <Star size={14} fill="currentColor" />
                     <Star size={14} fill="currentColor" />
                 </div>
-                <span className="text-[8px] lg:text-[10px] font-bold uppercase mt-1 opacity-60">GOOGLE REVIEWS</span>
+                <span className="text-[10px] font-bold uppercase mt-1 opacity-70">GOOGLE REVIEWS</span>
             </div>
             <div className="h-10 lg:h-12 w-px bg-foreground/10" />
             <div className="flex flex-col items-center lg:items-start text-foreground">
                 <span className="text-2xl lg:text-3xl font-black">100%</span>
-                <span className="text-[8px] lg:text-[10px] font-bold uppercase mt-1 opacity-60 italic">Naturel & Frais</span>
+                <span className="text-[10px] font-bold uppercase mt-1 opacity-70 italic">Naturel & Frais</span>
             </div>
           </div>
         </div>
@@ -143,7 +144,7 @@ export default function Hero() {
 
       {/* Floating Decorative Text */}
       <div className="absolute bottom-10 left-0 w-full overflow-hidden whitespace-nowrap opacity-20 pointer-events-none">
-          <div className="animate-marquee-slow flex gap-20 font-display text-[10vh] uppercase text-outline">
+          <div className="animate-marquee-slow flex gap-20 font-display text-[10vh] uppercase text-outline" style={{ willChange: 'transform' }}>
               <span>Freshly Made • Ceremonial Grade • Niamey Vibe • Freshly Made • Ceremonial Grade • Niamey Vibe • </span>
           </div>
       </div>

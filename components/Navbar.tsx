@@ -53,7 +53,7 @@ export default function Navbar() {
               <a 
                 key={link.name}
                 href={link.href} 
-                className="px-6 py-2 rounded-full font-display text-[11px] tracking-widest hover:bg-white hover:text-primary transition-all duration-300"
+                className="px-6 py-2 rounded-full font-display text-[12px] tracking-widest hover:bg-white hover:text-primary-content transition-all duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
               >
                 {link.name}
               </a>
@@ -62,19 +62,23 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
-            <button className="relative hidden md:flex p-2.5 bg-white border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all group">
+            <button 
+              aria-label="Mon Panier"
+              className="relative hidden md:flex p-2.5 bg-white border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all group focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none"
+            >
               <ShoppingBag size={20} />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-white text-[10px] rounded-full flex items-center justify-center border border-foreground font-black">2</span>
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-foreground text-[10px] rounded-full flex items-center justify-center border border-foreground font-black">2</span>
             </button>
             
-            <button className="hidden sm:flex bg-primary border-2 border-foreground px-6 py-2.5 lg:px-8 font-display text-lg lg:text-xl uppercase brutalist-shadow-sm hover-brutalist transition-all">
+            <button className="hidden sm:flex bg-primary border-2 border-foreground px-6 py-2.5 lg:px-8 font-display text-lg lg:text-xl uppercase brutalist-shadow-sm hover-brutalist transition-all focus-visible:ring-2 focus-visible:ring-foreground focus-visible:outline-none text-foreground">
               COMMANDER
             </button>
 
             {/* Mobile Menu Toggle */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2.5 bg-foreground text-background border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all"
+              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              className="lg:hidden p-2.5 bg-foreground text-background border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -109,7 +113,7 @@ export default function Navbar() {
             </div>
 
             <div className="mt-12 space-y-4">
-              <button className="w-full bg-primary border-2 border-foreground py-6 font-display text-3xl uppercase brutalist-shadow">
+              <button className="w-full bg-primary border-2 border-foreground py-6 font-display text-3xl uppercase brutalist-shadow text-foreground focus-visible:ring-4 focus-visible:ring-secondary">
                 COMMANDER MAINTENANT
               </button>
               <div className="flex justify-between items-center p-6 bg-white border-2 border-foreground brutalist-shadow-sm">

@@ -4,7 +4,9 @@
   --color-background: #F5F5F0;
   --color-foreground: #0F172A;
   --color-primary: #A3FF47;
+  --color-primary-content: #2C5E00; /* Darker green for text on light backgrounds */
   --color-secondary: #FF6B35;
+  --color-secondary-content: #C23B00; /* Darker orange for text on light backgrounds */
   --color-muted: #E2E2D9;
   
   --font-sans: "Outfit", system-ui, sans-serif;
@@ -15,7 +17,9 @@
   --background: #F5F5F0;
   --foreground: #0F172A;
   --primary: #A3FF47;
+  --primary-content: #2C5E00;
   --secondary: #FF6B35;
+  --secondary-content: #C23B00;
 }
 
 @layer base {

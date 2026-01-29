@@ -14,16 +14,17 @@ export default function Footer() {
                     <span className="text-primary not-italic">EXPRESS</span>
                 </h2>
                 <div className="space-y-6">
-                    <p className="text-2xl font-medium opacity-80 max-w-md">
+                    <p className="text-2xl font-medium opacity-90 max-w-md">
                         Inscris-toi pour recevoir les drops secrets et les menus éphémères de la saison.
                     </p>
-                    <div className="flex max-w-md group">
+                    <div className="flex flex-col sm:flex-row max-w-md group gap-2 sm:gap-0">
                         <input 
                             type="email" 
+                            aria-label="Adresse email pour la newsletter"
                             placeholder="TON EMAIL" 
-                            className="bg-white/5 border-2 border-white/20 px-8 py-5 flex-grow font-display text-2xl focus:outline-none focus:border-primary transition-colors text-white"
+                            className="bg-white/5 border-2 border-white/20 px-8 py-5 flex-grow font-display text-2xl focus:outline-none focus:border-primary transition-colors text-white focus-visible:ring-2 focus-visible:ring-primary"
                         />
-                        <button className="bg-primary text-foreground px-10 py-5 font-display text-2xl uppercase hover:bg-white transition-all flex items-center justify-center gap-3 brutalist-shadow-sm h-full">
+                        <button className="bg-primary text-foreground px-10 py-5 font-display text-2xl uppercase hover:bg-white transition-all flex items-center justify-center gap-3 brutalist-shadow-sm h-full focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
                             OK <ArrowRight size={24} />
                         </button>
                     </div>
@@ -46,17 +47,17 @@ export default function Footer() {
                     <div className="w-12 h-12 bg-primary border-2 border-foreground rounded-xl flex items-center justify-center font-display text-3xl text-foreground">B</div>
                     <span className="font-display text-3xl tracking-tighter uppercase font-black">Boba Express</span>
                 </div>
-                <p className="opacity-50 font-medium text-lg leading-relaxed">
+                <p className="opacity-70 font-medium text-lg leading-relaxed">
                     Le premier concept de Bubble Tea urbain au Niger. Boba, Shakes & Authentic Vibes.
                 </p>
                 <div className="flex gap-4">
-                    <a href="https://instagram.com/boba.express_" target="_blank" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all">
+                    <a href="https://instagram.com/boba.express_" target="_blank" aria-label="Instagram" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
                         <Instagram size={24} />
                     </a>
-                    <a href="#" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all">
+                    <a href="#" aria-label="Facebook" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
                         <Facebook size={24} />
                     </a>
-                    <a href="#" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all">
+                    <a href="#" aria-label="Twitter" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
                         <Twitter size={24} />
                     </a>
                 </div>
@@ -64,11 +65,11 @@ export default function Footer() {
 
             <div className="space-y-8">
                 <h4 className="font-display text-2xl text-primary font-black uppercase italic tracking-widest">Navigation</h4>
-                <ul className="space-y-4 text-xl font-medium opacity-60">
-                    <li className="hover:text-primary transition-colors cursor-pointer"><a href="#menu">Le Menu</a></li>
-                    <li className="hover:text-primary transition-colors cursor-pointer"><a href="#locations">Nos Spots</a></li>
-                    <li className="hover:text-primary transition-colors cursor-pointer">L&apos;Histoire</li>
-                    <li className="hover:text-primary transition-colors cursor-pointer">Rejoindre la Team</li>
+                <ul className="space-y-4 text-xl font-medium opacity-70">
+                    <li className="hover:text-primary transition-colors cursor-pointer focus-within:text-primary"><a href="#menu" className="outline-none focus-visible:underline">Le Menu</a></li>
+                    <li className="hover:text-primary transition-colors cursor-pointer focus-within:text-primary"><a href="#locations" className="outline-none focus-visible:underline">Nos Spots</a></li>
+                    <li className="hover:text-primary transition-colors cursor-pointer focus-within:text-primary"><a href="#" className="outline-none focus-visible:underline">L&apos;Histoire</a></li>
+                    <li className="hover:text-primary transition-colors cursor-pointer focus-within:text-primary"><a href="#" className="outline-none focus-visible:underline">Rejoindre la Team</a></li>
                 </ul>
             </div>
 

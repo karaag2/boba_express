@@ -15,15 +15,15 @@ export default function Location() {
     <section id="locations" className="py-24 px-6 bg-[#F5F5F0]">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 bg-secondary p-8 md:p-12 border-4 border-foreground relative overflow-hidden brutalist-shadow">
-            <h2 className="text-5xl md:text-7xl text-white mb-8 leading-none font-display uppercase italic">TROUVE TA <br/><span className="text-white">BOBA ZONE</span></h2>
-            <p className="text-xl text-white/90 font-sans mb-10 max-w-sm">4 spots stratégiques à Niamey pour ne jamais manquer ta dose d&apos;énergie.</p>
+            <h2 className="text-5xl md:text-7xl text-foreground mb-8 leading-none font-display uppercase italic text-wrap-balance">TROUVE TA <br/><span className="text-foreground">BOBA ZONE</span></h2>
+            <p className="text-xl text-foreground/90 font-sans mb-10 max-w-sm">4 spots stratégiques à Niamey pour ne jamais manquer ta dose d&apos;énergie.</p>
             
             <div className="space-y-4">
                 {locations.map((loc, i) => (
-                    <div key={i} className="bg-white p-4 md:p-6 border-2 border-foreground brutalist-shadow-sm flex items-center justify-between group hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all cursor-pointer">
+                    <div key={i} className="bg-white p-4 md:p-6 border-2 border-foreground brutalist-shadow-sm flex items-center justify-between group hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all cursor-pointer focus-within:ring-4 focus-within:ring-primary outline-none" tabIndex={0}>
                         <div>
                             <h3 className="text-xl md:text-2xl font-display uppercase leading-tight">{loc.name}</h3>
-                            <p className="font-sans text-xs opacity-60 uppercase tracking-tighter">{loc.address}</p>
+                            <p className="font-sans text-xs opacity-70 uppercase tracking-tighter font-medium">{loc.address}</p>
                         </div>
                         <MapPin className="text-secondary group-hover:scale-125 transition-transform" />
                     </div>

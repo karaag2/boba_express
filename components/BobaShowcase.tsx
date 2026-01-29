@@ -23,7 +23,7 @@ const sections = [
     title: "LOCAL FRUIT VIBES",
     subtitle: "Fraîcheur du Sahel",
     description: "Hibiscus, Papaye, Mangue. Nous célébrons les saveurs de notre terre avec une touche moderne et rafraîchissante.",
-    image: "/products/the_glace.jpg",
+    image: "/products/whisk/Whisk_e30331d74c49100a858447f573a8115fdr.jpeg",
     accent: "bg-amber-400"
   }
 ];
@@ -65,6 +65,7 @@ export default function BobaShowcase() {
                      alt={section.title}
                      fill
                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                     sizes="(max-width: 1024px) 100vw, 50vw"
                    />
                    <div className={`absolute inset-0 opacity-20 ${section.accent}`} />
                 </motion.div>
@@ -85,17 +86,17 @@ export default function BobaShowcase() {
                      <span className={`w-12 h-1 ${section.accent}`} />
                      <span className="font-black uppercase tracking-[0.3em] text-sm opacity-60">Insight {idx + 1}</span>
                   </div>
-                  <h2 className="text-6xl md:text-8xl font-black font-display leading-none mb-4 uppercase italic">
+                  <h2 className="text-6xl md:text-8xl font-black font-display leading-none mb-4 uppercase italic text-wrap-balance">
                     {section.title}
                   </h2>
-                  <h3 className="text-3xl font-display text-secondary mb-8 uppercase tracking-tighter">
+                  <h3 className="text-3xl font-display text-secondary-content mb-8 uppercase tracking-tighter">
                     {section.subtitle}
                   </h3>
-                  <p className="text-2xl font-medium text-foreground/70 leading-relaxed max-w-lg">
+                  <p className="text-2xl font-medium text-foreground/80 leading-relaxed max-w-lg">
                     {section.description}
                   </p>
                   
-                  <button className={`mt-12 px-10 py-5 font-display text-2xl uppercase border-4 border-foreground brutalist-shadow-sm hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all bg-white`}>
+                  <button className={`mt-12 px-10 py-5 font-display text-2xl uppercase border-4 border-foreground brutalist-shadow-sm hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all bg-white focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none`}>
                     Découvrir la gamme
                   </button>
                 </motion.div>
