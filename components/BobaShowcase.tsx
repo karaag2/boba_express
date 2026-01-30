@@ -10,21 +10,24 @@ const sections = [
     subtitle: "L'excellence Cérémoniale",
     description: "Notre Matcha est sourcé directement du Japon, préparé avec une précision chirurgicale pour une explosion de saveurs vertes et terreuses.",
     image: "/hero_master.jpg",
-    accent: "bg-primary"
+    accent: "bg-primary",
+    textColor: "text-primary-content"
   },
   {
     title: "DOCTOR MILKSHAKES",
     subtitle: "Gourmandise Absolue",
     description: "Le Milkshake Mina ou le Shake Spéculos ne sont pas de simples boissons. Ce sont des thérapies sucrées pour l'âme.",
     image: "/products/milkshake_mina.jpg",
-    accent: "bg-secondary"
+    accent: "bg-secondary",
+    textColor: "text-secondary-content"
   },
   {
     title: "LOCAL FRUIT VIBES",
     subtitle: "Fraîcheur du Sahel",
     description: "Hibiscus, Papaye, Mangue. Nous célébrons les saveurs de notre terre avec une touche moderne et rafraîchissante.",
     image: "/products/whisk/Whisk_e30331d74c49100a858447f573a8115fdr.jpeg",
-    accent: "bg-amber-400"
+    accent: "bg-primary",
+    textColor: "text-primary-content"
   }
 ];
 
@@ -43,7 +46,7 @@ export default function BobaShowcase() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-white text-foreground overflow-hidden">
+    <section id="showcase" ref={containerRef} className="relative bg-background text-foreground overflow-hidden">
       <div className="max-w-7xl mx-auto py-24 px-6">
         <div className="space-y-48">
           {sections.map((section, idx) => (
@@ -96,7 +99,7 @@ export default function BobaShowcase() {
                     {section.description}
                   </p>
                   
-                  <button className={`mt-12 px-10 py-5 font-display text-2xl uppercase border-4 border-foreground brutalist-shadow-sm hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all bg-white focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none`}>
+                  <button className={`mt-12 px-10 py-5 font-display text-2xl uppercase border-4 border-foreground brutalist-shadow-sm hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all bg-background text-foreground hover:bg-muted focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none`}>
                     Découvrir la gamme
                   </button>
                 </motion.div>

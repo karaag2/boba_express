@@ -5,7 +5,7 @@ import { Instagram, Facebook, Twitter, ArrowRight, Phone, Mail, MapPin } from "l
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-background pt-32 pb-12 px-6 overflow-hidden border-t-8 border-primary">
+    <footer className="bg-[#0F172A] text-[#F5F5F0] pt-32 pb-12 px-6 overflow-hidden border-t-8 border-primary">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-20 mb-32 pb-20 border-b border-white/10">
             <div className="space-y-10">
@@ -24,7 +24,7 @@ export default function Footer() {
                             placeholder="TON EMAIL" 
                             className="bg-white/5 border-2 border-white/20 px-8 py-5 flex-grow font-display text-2xl focus:outline-none focus:border-primary transition-colors text-white focus-visible:ring-2 focus-visible:ring-primary"
                         />
-                        <button className="bg-primary text-foreground px-10 py-5 font-display text-2xl uppercase hover:bg-white transition-all flex items-center justify-center gap-3 brutalist-shadow-sm h-full focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
+                        <button className="bg-primary text-[#0F172A] px-10 py-5 font-display text-2xl uppercase hover:bg-white transition-all flex items-center justify-center gap-3 brutalist-shadow-sm h-full focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
                             OK <ArrowRight size={24} />
                         </button>
                     </div>
@@ -51,13 +51,13 @@ export default function Footer() {
                     Le premier concept de Bubble Tea urbain au Niger. Boba, Shakes & Authentic Vibes.
                 </p>
                 <div className="flex gap-4">
-                    <a href="https://instagram.com/boba.express_" target="_blank" aria-label="Instagram" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
+                    <a href="https://instagram.com/boba.express_" target="_blank" aria-label="Instagram" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-primary-content hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
                         <Instagram size={24} />
                     </a>
-                    <a href="#" aria-label="Facebook" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
+                    <a href="#" aria-label="Facebook" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-primary-content hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
                         <Facebook size={24} />
                     </a>
-                    <a href="#" aria-label="Twitter" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-foreground hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
+                    <a href="#" aria-label="Twitter" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary hover:text-primary-content hover:scale-110 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
                         <Twitter size={24} />
                     </a>
                 </div>
@@ -82,11 +82,11 @@ export default function Footer() {
                     </li>
                     <li className="flex items-center gap-4 hover:opacity-100 transition-opacity">
                         <Phone size={20} className="text-secondary" />
-                        <span>+227 00 00 00 00</span>
+                        <a href="tel:+22700000000" className="hover:text-primary transition-colors">+227 00 00 00 00</a>
                     </li>
                     <li className="flex items-center gap-4 hover:opacity-100 transition-opacity">
                         <Mail size={20} className="text-secondary" />
-                        <span>hello@bobaexpress.ne</span>
+                        <a href="mailto:hello@bobaexpress.ne" className="hover:text-primary transition-colors">hello@bobaexpress.ne</a>
                     </li>
                 </ul>
             </div>
@@ -110,7 +110,17 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 opacity-30 text-xs font-black tracking-[0.3em] gap-8">
-            <p>© 2026 BOBA EXPRESS NIAMEY. DESIGNED FOR THE STREETS.</p>
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                <p>© 2026 BOBA EXPRESS NIAMEY.</p>
+                <a 
+                  href="https://www.linkedin.com/in/amos-issa-yonli-953826298" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors border-b border-transparent hover:border-primary"
+                >
+                  SITE PAR AMOS ISSA
+                </a>
+            </div>
             <div className="flex gap-10">
                 <a href="#" className="hover:text-primary transition-colors">PRIVACY</a>
                 <a href="#" className="hover:text-primary transition-colors">TERMS</a>

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-[#F5F5F0]">
+    <section className="relative min-h-screen w-full flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-background">
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-[120px]" />
@@ -29,7 +29,7 @@ export default function Hero() {
             >
                 {/* Decorative Frames */}
                 <div className="absolute inset-4 border-2 border-foreground brutalist-shadow rotate-3" />
-                <div className="absolute inset-0 bg-white border-2 border-foreground brutalist-shadow overflow-hidden group">
+                <div className="absolute inset-0 bg-muted border-2 border-foreground brutalist-shadow overflow-hidden group">
                     <Image 
                         src="/hero_master.jpg" 
                         alt="Boba Signature" 
@@ -48,7 +48,7 @@ export default function Hero() {
                         <Zap size={20} className="animate-pulse lg:w-6 lg:h-6" />
                         <div>
                             <div className="text-[10px] font-black uppercase opacity-70 leading-none text-foreground">Best Seller</div>
-                            <div className="text-lg lg:text-xl font-display leading-none mt-1 text-foreground uppercase">MATCHA SUPREME</div>
+                            <div className="text-lg lg:text-xl font-display leading-none mt-1 text-foreground uppercase">SIGNATURE BOBA</div>
                         </div>
                     </motion.div>
                 </div>
@@ -69,7 +69,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-foreground brutalist-shadow-sm rounded-full"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-muted border-2 border-foreground brutalist-shadow-sm rounded-full"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="text-xs font-black uppercase tracking-[0.2em] text-foreground">Ouvert à Yantala • 11:00 - 22:00</span>
@@ -81,14 +81,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-[14vw] lg:text-[7rem] leading-[0.85] font-black tracking-tighter uppercase mb-4 lg:mb-0 text-foreground text-wrap-balance">
-              L&apos;ART DU <br/>
-              <span className="text-primary-content italic relative">
-                MATCHA 
+              LA <span className="text-secondary italic">BOBA</span> <br/>
+              <span className="text-primary italic relative">
+                CULTURE 
                 <svg className="absolute -bottom-2 left-0 w-full h-4 text-secondary/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                 </svg>
               </span>
-              <br/> URBAIN
+              <br/> AU NIGER
             </h1>
           </motion.div>
 
@@ -98,7 +98,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-lg text-lg lg:text-2xl font-medium leading-relaxed text-foreground/80"
           >
-            Boba Express redéfinit l&apos;expérience du Bubble Tea à Niamey. 
+            <span className="text-secondary italic">Boba Express</span> redéfinit l&apos;expérience du Bubble Tea à Niamey. 
             Des ingrédients premium, une culture authentique, une énergie pure.
           </motion.p>
 
@@ -109,13 +109,13 @@ export default function Hero() {
             className="flex flex-wrap gap-4 lg:gap-6 justify-center lg:justify-start"
           >
             <button className="group relative bg-foreground text-background px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase overflow-hidden brutalist-shadow hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none">
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="relative z-10 flex items-center gap-3 transition-colors group-hover:text-primary-content">
                     COMMANDER <ShoppingCart size={24} />
                 </span>
                 <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
             
-            <button className="px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase border-2 border-foreground hover:bg-white transition-all flex items-center gap-3 text-foreground focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
+            <button className="px-8 lg:px-10 py-4 lg:py-5 font-display text-xl lg:text-2xl uppercase border-2 border-foreground hover:bg-muted transition-all flex items-center gap-3 text-foreground focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
                 LE MENU <ArrowRight size={24} />
             </button>
           </motion.div>

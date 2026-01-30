@@ -1,18 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-background: #F5F5F0;
-  --color-foreground: #0F172A;
-  --color-primary: #A3FF47;
-  --color-primary-content: #2C5E00; /* Darker green for text on light backgrounds */
-  --color-secondary: #FF6B35;
-  --color-secondary-content: #C23B00; /* Darker orange for text on light backgrounds */
-  --color-muted: #E2E2D9;
-  
-  --font-sans: "Outfit", system-ui, sans-serif;
-  --font-display: "Bebas Neue", cursive;
-}
-
 :root {
   --background: #F5F5F0;
   --foreground: #0F172A;
@@ -20,6 +7,54 @@
   --primary-content: #2C5E00;
   --secondary: #FF6B35;
   --secondary-content: #C23B00;
+  --muted: #E2E2D9;
+  --brutalist-shadow: rgba(15, 23, 42, 1);
+}
+
+[data-theme="dark"] {
+  --background: #020617;
+  --foreground: #F8FAFC;
+  --primary: #A3FF47;
+  --primary-content: #020617;
+  --secondary: #FF6B35;
+  --secondary-content: #020617;
+  --muted: #1E293B;
+  --brutalist-shadow: #F8FAFC;
+}
+
+[data-theme="mango"] {
+  --background: #FFFBEB;
+  --foreground: #451A03;
+  --primary: #FBBF24;
+  --primary-content: #451A03;
+  --secondary: #F97316;
+  --secondary-content: #FFFBEB;
+  --muted: #FEF3C7;
+  --brutalist-shadow: rgba(69, 26, 3, 1);
+}
+
+[data-theme="taro"] {
+  --background: #faf5ff;
+  --foreground: #3b0764;
+  --primary: #d8b4fe;
+  --primary-content: #3b0764;
+  --secondary: #a855f7;
+  --secondary-content: #faf5ff;
+  --muted: #f3e8ff;
+  --brutalist-shadow: rgba(59, 7, 100, 1);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-content: var(--primary-content);
+  --color-secondary: var(--secondary);
+  --color-secondary-content: var(--secondary-content);
+  --color-muted: var(--muted);
+  
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Bebas Neue", cursive;
 }
 
 @layer base {
@@ -62,16 +97,16 @@
 
 /* Brutalist Shadows */
 .brutalist-shadow {
-  box-shadow: 6px 6px 0px 0px rgba(15, 23, 42, 1);
+  box-shadow: 6px 6px 0px 0px var(--brutalist-shadow);
 }
 
 .brutalist-shadow-sm {
-  box-shadow: 4px 4px 0px 0px rgba(15, 23, 42, 1);
+  box-shadow: 4px 4px 0px 0px var(--brutalist-shadow);
 }
 
 .hover-brutalist:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px 0px rgba(15, 23, 42, 1);
+  box-shadow: 8px 8px 0px 0px var(--brutalist-shadow);
 }
 
 @layer utilities {

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ShoppingBag, Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +18,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "NOTRE HISTOIRE", href: "#" },
-    { name: "LE MENU", href: "#" },
-    { name: "FIDÉLITÉ", href: "#" },
-    { name: "COMMUNAUTÉ", href: "#" },
+    { name: "SÉLECTION", href: "#showcase" },
+    { name: "LE MENU", href: "#menu" },
+    { name: "NOS SPOTS", href: "#locations" },
+    { name: "COMMUNAUTÉ", href: "#community" },
   ];
 
   return (
@@ -62,15 +63,17 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
+            
             <button 
               aria-label="Mon Panier"
-              className="relative hidden md:flex p-2.5 bg-white border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all group focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none"
+              className="relative hidden md:flex p-2.5 bg-background border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all group focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none"
             >
-              <ShoppingBag size={20} />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-foreground text-[10px] rounded-full flex items-center justify-center border border-foreground font-black">2</span>
+              <ShoppingBag size={20} className="text-foreground" />
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-content text-[10px] rounded-full flex items-center justify-center border border-foreground font-black">2</span>
             </button>
             
-            <button className="hidden sm:flex bg-primary border-2 border-foreground px-6 py-2.5 lg:px-8 font-display text-lg lg:text-xl uppercase brutalist-shadow-sm hover-brutalist transition-all focus-visible:ring-2 focus-visible:ring-foreground focus-visible:outline-none text-foreground">
+            <button className="hidden sm:flex bg-primary border-2 border-foreground px-6 py-2.5 lg:px-8 font-display text-lg lg:text-xl uppercase brutalist-shadow-sm hover-brutalist transition-all focus-visible:ring-2 focus-visible:ring-foreground focus-visible:outline-none text-primary-content">
               COMMANDER
             </button>
 
@@ -93,7 +96,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 lg:hidden bg-[#F5F5F0] pt-28 px-6"
+            className="fixed inset-0 z-40 lg:hidden bg-background pt-28 px-6"
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link, i) => (

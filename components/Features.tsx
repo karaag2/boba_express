@@ -9,43 +9,49 @@ const features = [
     icon: Zap,
     title: "ÉNERGIE PURE",
     description: "Nos boissons sont conçues pour vous donner le boost nécessaire sans le crash du sucre industriel.",
-    color: "bg-primary"
+    color: "bg-primary",
+    textColor: "text-primary-content"
   },
   {
     icon: ShieldCheck,
     title: "SÉCURITÉ ALIMENTAIRE",
     description: "Hygiène irréprochable. Ingrédients tracés. Préparation devant vos yeux.",
-    color: "bg-secondary"
+    color: "bg-secondary",
+    textColor: "text-secondary-content"
   },
   {
     icon: MapPin,
     title: "4 SPOTS À NIAMEY",
     description: "Plateau, Niamey 2000, Nouveau Marché, Centre Aéré. On est là où tu es.",
-    color: "bg-amber-400"
+    color: "bg-primary",
+    textColor: "text-primary-content"
   },
   {
     icon: Clock,
     title: "SERVICE FLASH",
     description: "Parce que le Boba n'attend pas. Commandé en 2 min, dégusté en 10.",
-    color: "bg-blue-400"
+    color: "bg-secondary",
+    textColor: "text-secondary-content"
   },
   {
     icon: Heart,
     title: "100% PASSION",
     description: "Plus qu'un métier, c'est une culture. On respire Boba Express chaque jour.",
-    color: "bg-red-400"
+    color: "bg-primary",
+    textColor: "text-primary-content"
   },
   {
     icon: Sparkles,
-    title: "RECHARGE PERRIERS",
+    title: "EXCLUSIVITÉ",
     description: "L'exclusivité Boba Express : tes boissons favorites avec une base Perrier pétillante.",
-    color: "bg-purple-400"
+    color: "bg-secondary",
+    textColor: "text-secondary-content"
   }
 ];
 
 export default function Features() {
   return (
-    <section className="py-24 bg-white px-6 overflow-hidden">
+    <section id="features" className="py-24 bg-background px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 space-y-4">
             <motion.h2 
@@ -53,7 +59,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-6xl md:text-8xl font-black font-display uppercase italic text-foreground text-wrap-balance"
             >
-                POURQUOI <span className="text-primary-content not-italic">NOUS ?</span>
+                POURQUOI <span className="text-primary not-italic">NOUS ?</span>
             </motion.h2>
             <p className="text-xl text-foreground/80 font-medium max-w-2xl mx-auto">
                 On ne fait pas juste des boissons. On crée des moments.
@@ -68,12 +74,12 @@ export default function Features() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ translateZ: 20, rotate: idx % 2 === 0 ? 2 : -2 }}
-              className="p-10 border-4 border-foreground bg-white brutalist-shadow hover:bg-muted transition-colors group relative focus-within:ring-4 focus-within:ring-primary outline-none"
+              className="p-10 border-4 border-foreground bg-background brutalist-shadow hover:bg-muted transition-colors group relative focus-within:ring-4 focus-within:ring-primary outline-none"
             >
               <div className={`w-20 h-20 ${feature.color} border-4 border-foreground rounded-2xl flex items-center justify-center mb-8 rotate-3 group-hover:rotate-12 transition-transform`}>
-                <feature.icon size={40} className="text-foreground" aria-hidden="true" />
+                <feature.icon size={40} className={feature.textColor} aria-hidden="true" />
               </div>
-              <h3 className="text-3xl font-display mb-4 uppercase italic tracking-tighter">{feature.title}</h3>
+              <h3 className="text-3xl font-display mb-4 uppercase italic tracking-tighter text-foreground">{feature.title}</h3>
               <p className="text-lg font-medium text-foreground/80">{feature.description}</p>
               
               {/* Corner accent */}
