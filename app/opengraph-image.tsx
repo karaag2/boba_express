@@ -254,7 +254,7 @@ export default async function Image() {
               letterSpacing: "1px",
             }}
           >
-            bobaexpress.vercel.app
+            bobaexpress-niamey.vercel.app
           </div>
         </div>
       </div>

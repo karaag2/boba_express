@@ -162,7 +162,7 @@ export default async function Image() {
               color: "#FF6B35",
             }}
           >
-            bobaexpress.vercel.app
+            bobaexpress-niamey.vercel.app
           </div>
         </div>
       </div>

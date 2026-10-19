@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { products } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bobaexpress.vercel.app';
+  const baseUrl = 'https://bobaexpress-niamey.vercel.app';
   
   const productEntries: MetadataRoute.Sitemap = products.map((product) => ({
     url: `${baseUrl}/menu/${product.slug}`,

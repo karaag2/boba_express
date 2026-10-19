@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
             value: 'bobaexpress-niamey.com',
           },
         ],
-        destination: 'https://bobaexpress.vercel.app/:path*',
+        destination: 'https://bobaexpress-niamey.vercel.app/:path*',
         permanent: true,
       },
       {
@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
             value: 'www.bobaexpress-niamey.com',
           },
         ],
-        destination: 'https://bobaexpress.vercel.app/:path*',
+        destination: 'https://bobaexpress-niamey.vercel.app/:path*',
         permanent: true,
       },
     ];

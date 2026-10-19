@@ -5,8 +5,8 @@ export default function SchemaMarkup() {
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
     "name": "Boba Express Niamey",
-    "image": "https://bobaexpress.vercel.app/og-image.jpg",
-    "url": "https://bobaexpress.vercel.app",
+    "image": "https://bobaexpress-niamey.vercel.app/og-image.jpg",
+    "url": "https://bobaexpress-niamey.vercel.app",
     "description": "Boba Express redéfinit l'expérience du Bubble Tea à Niamey. Perles de tapioca artisanales fraîches, milkshakes gourmands, smoothies sahariens et livraison rapide à Niamey.",
     "telephone": "+22777394165",
     "address": {

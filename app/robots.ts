@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://bobaexpress.vercel.app/sitemap.xml',
+    sitemap: 'https://bobaexpress-niamey.vercel.app/sitemap.xml',
   }
 }

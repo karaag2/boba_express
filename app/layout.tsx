@@ -19,7 +19,7 @@ const siteConfig = {
   name: "Boba Express Niamey",
   title: "Boba Express Niamey | Le Meilleur Bubble Tea & Milkshake au Niger",
   description: "Le 1er bar à Bubble Tea artisanal de Niamey, Niger. Perles de tapioca fraîches du jour, matcha de cérémonie, milkshakes ultra gourmands et smoothies sahariens. Commande directe sur WhatsApp et livraison express.",
-  url: "https://bobaexpress.vercel.app",
+  url: "https://bobaexpress-niamey.vercel.app",
   keywords: [
     "Bubble Tea Niamey",
     "Boba Niger",
