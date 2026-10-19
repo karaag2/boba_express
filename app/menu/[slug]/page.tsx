@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ProductDetailOrder from "@/components/ProductDetailOrder";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -63,12 +64,7 @@ export default async function ProductPage({ params }: Props) {
             <p className="text-2xl font-medium text-foreground/80 leading-relaxed max-w-xl">
               {product.description}
             </p>
-            <div className="flex items-center gap-8">
-              <span className="text-5xl font-black tabular-nums">{product.price}</span>
-              <button className="bg-primary border-4 border-foreground px-10 py-5 font-display text-2xl uppercase brutalist-shadow hover-brutalist transition-all">
-                COMMANDER
-              </button>
-            </div>
+            <ProductDetailOrder product={product} />
           </div>
         </div>
       </div>

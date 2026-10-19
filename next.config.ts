@@ -6,6 +6,32 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'bobaexpress-niamey.com',
+          },
+        ],
+        destination: 'https://bobaexpress.vercel.app/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.bobaexpress-niamey.com',
+          },
+        ],
+        destination: 'https://bobaexpress.vercel.app/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -4,10 +4,12 @@ import React, { useState, useEffect } from "react";
 import { ShoppingBag, Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import { useCart } from "@/lib/cart-context";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { totalCount, openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,14 +68,31 @@ export default function Navbar() {
             <ThemeToggle />
             
             <button 
-              aria-label="Mon Panier"
-              className="relative hidden md:flex p-2.5 bg-background border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all group focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none"
+              onClick={openCart}
+              aria-label={totalCount > 0 ? `Mon Panier (${totalCount} articles)` : "Mon Panier"}
+              className="relative flex p-2.5 bg-background border-2 border-foreground rounded-xl brutalist-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all group focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none cursor-pointer"
             >
               <ShoppingBag size={20} className="text-foreground" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-content text-[10px] rounded-full flex items-center justify-center border border-foreground font-black">2</span>
+              <AnimatePresence>
+                {totalCount > 0 && (
+                  <motion.span 
+                    key="nav-cart-badge"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 25 }}
+                    className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-content text-[10px] rounded-full flex items-center justify-center border border-foreground font-black"
+                  >
+                    {totalCount}
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </button>
             
-            <button className="hidden sm:flex bg-primary border-2 border-foreground px-6 py-2.5 lg:px-8 font-display text-lg lg:text-xl uppercase brutalist-shadow-sm hover-brutalist transition-all focus-visible:ring-2 focus-visible:ring-foreground focus-visible:outline-none text-primary-content">
+            <button 
+              onClick={openCart}
+              className="hidden sm:flex bg-primary border-2 border-foreground px-6 py-2.5 lg:px-8 font-display text-lg lg:text-xl uppercase brutalist-shadow-sm hover-brutalist transition-all focus-visible:ring-2 focus-visible:ring-foreground focus-visible:outline-none text-primary-content cursor-pointer"
+            >
               COMMANDER
             </button>
 
@@ -116,16 +135,42 @@ export default function Navbar() {
             </div>
 
             <div className="mt-12 space-y-4">
-              <button className="w-full bg-primary border-2 border-foreground py-6 font-display text-3xl uppercase brutalist-shadow text-foreground focus-visible:ring-4 focus-visible:ring-secondary">
+              <button 
+                onClick={() => {
+                  setIsOpen(false);
+                  openCart();
+                }}
+                className="w-full bg-primary border-2 border-foreground py-6 font-display text-3xl uppercase brutalist-shadow text-foreground focus-visible:ring-4 focus-visible:ring-secondary cursor-pointer hover-brutalist transition-all"
+              >
                 COMMANDER MAINTENANT
               </button>
-              <div className="flex justify-between items-center p-6 bg-white border-2 border-foreground brutalist-shadow-sm">
-                 <span className="font-display text-xl uppercase tracking-widest">Mon Panier</span>
+              <button 
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                  openCart();
+                }}
+                className="w-full flex justify-between items-center p-6 bg-white border-2 border-foreground brutalist-shadow-sm cursor-pointer hover:bg-neutral-50 transition-colors text-left"
+              >
+                 <span className="font-display text-xl uppercase tracking-widest text-foreground">Mon Panier</span>
                  <div className="flex items-center gap-2">
-                    <ShoppingBag size={24} />
-                    <span className="font-black text-2xl">2</span>
+                    <ShoppingBag size={24} className="text-foreground" />
+                    <AnimatePresence>
+                      {totalCount > 0 && (
+                        <motion.span 
+                          key="drawer-cart-badge"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0, opacity: 0 }}
+                          transition={{ type: "spring", stiffness: 500, damping: 25 }}
+                          className="font-black text-sm bg-secondary text-secondary-content px-2.5 py-0.5 rounded-full border border-foreground min-w-6 text-center"
+                        >
+                          {totalCount}
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
                  </div>
-              </div>
+              </button>
             </div>
 
             {/* Social Links Mobile */}

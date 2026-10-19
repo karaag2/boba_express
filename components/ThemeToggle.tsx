@@ -16,9 +16,13 @@ export default function ThemeToggle() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setCurrentTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    const handleStorage = () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      setCurrentTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    };
+
+    handleStorage();
   }, []);
 
   const toggleTheme = (themeId: string) => {
@@ -49,7 +53,6 @@ export default function ThemeToggle() {
             className="absolute right-0 top-full mt-4 p-2 bg-background border-2 border-foreground brutalist-shadow-sm flex flex-col gap-2 z-[100] min-w-[140px]"
           >
             {themes.map((theme) => {
-              const Icon = theme.icon;
               return (
                 <button
                   key={theme.id}

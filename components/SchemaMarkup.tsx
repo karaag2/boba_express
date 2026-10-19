@@ -5,10 +5,10 @@ export default function SchemaMarkup() {
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
     "name": "Boba Express Niamey",
-    "image": "https://bobaexpress-niamey.com/hero_master.jpg",
-    "url": "https://bobaexpress-niamey.com",
-    "description": "Boba Express redéfinit l'expérience du Bubble Tea à Niamey. Des ingrédients premium, une culture authentique, une énergie pure.",
-    "telephone": "+22700000000", // Update with real phone
+    "image": "https://bobaexpress.vercel.app/og-image.jpg",
+    "url": "https://bobaexpress.vercel.app",
+    "description": "Boba Express redéfinit l'expérience du Bubble Tea à Niamey. Perles de tapioca artisanales fraîches, milkshakes gourmands, smoothies sahariens et livraison rapide à Niamey.",
+    "telephone": "+22777394165",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Yantala",

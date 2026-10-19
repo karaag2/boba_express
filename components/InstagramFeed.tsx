@@ -23,10 +23,13 @@ export default function InstagramFeed() {
 
       <div className="flex flex-wrap justify-center gap-6 md:gap-10">
         {feedImages.map((img) => (
-          <div 
-            key={img.id} 
-            className={`w-60 h-72 md:w-72 md:h-96 bg-muted border-2 border-foreground p-3 md:p-4 brutalist-shadow transition-all hover:scale-110 hover:rotate-0 hover:z-30 hover:translate-x-[-4px] hover:translate-y-[-4px] cursor-pointer group focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none ${img.rotation}`}
-            tabIndex={0}
+          <a 
+            key={img.id}
+            href="https://instagram.com/boba.express_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block w-60 h-72 md:w-72 md:h-96 bg-muted border-2 border-foreground p-3 md:p-4 brutalist-shadow transition-all hover:scale-105 hover:rotate-0 hover:z-30 hover:translate-x-[-4px] hover:translate-y-[-4px] cursor-pointer group focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none ${img.rotation}`}
+            aria-label="Voir notre photo sur Instagram @boba.express_"
           >
             <div className="w-full h-full bg-slate-100 relative overflow-hidden">
                 <Image 
@@ -43,14 +46,19 @@ export default function InstagramFeed() {
                     <span className="opacity-80 font-sans text-xs mt-4 uppercase font-black">#BobaExpressNiamey</span>
                 </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
       
       <div className="mt-20 flex justify-center">
-        <button className="bg-foreground text-background px-12 py-5 font-display text-2xl uppercase brutalist-shadow hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none">
-            VOIR TOUT LE FEED
-        </button>
+        <a 
+          href="https://instagram.com/boba.express_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-foreground text-background px-12 py-5 font-display text-2xl uppercase brutalist-shadow hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all focus-visible:ring-4 focus-visible:ring-secondary focus-visible:outline-none"
+        >
+            VOIR TOUT LE FEED INSTAGRAM
+        </a>
       </div>
     </section>
   );
